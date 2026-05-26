@@ -16,8 +16,8 @@ h3{font-size:clamp(24px,3vw,36px);line-height:1.15;font-weight:500}
 ::selection{background:rgba(201,169,97,0.3);color:#F5F0E8}
 
 /* Navigation with 3D glassmorphism */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,13,0.8);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,169,97,0.06)}
-@media(max-width:768px){nav{padding:20px 24px}}
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,13,0.8);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,169,97,0.06)}
+@media(max-width:768px){nav{top:34px;padding:16px 24px}}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:#F5F0E8;text-decoration:none}
 .nav-logo span{color:#C9A961}
 .nav-links{display:flex;gap:40px;align-items:center}
@@ -135,3 +135,20 @@ footer{padding:80px 0 40px;border-top:1px solid rgba(245,240,232,0.06)}
 
 /* Dark glass card for circadian */
 .glass-card{background:rgba(28,28,30,0.4);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(201,169,97,0.08);border-radius:4px;padding:32px}
+
+/* Announcement Bar */
+.announcement-bar{position:fixed;top:0;left:0;right:0;z-index:101;padding:10px 48px;display:flex;justify-content:center;align-items:center;background:rgba(44,44,46,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,169,97,0.08);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,232,0.7)}
+.announcement-bar span{color:#C9A961}
+@media(max-width:768px){.announcement-bar{padding:8px 24px;font-size:10px}}
+
+/* Social Proof Popup */
+.social-proof{position:fixed;bottom:24px;left:24px;z-index:200;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;pointer-events:none;max-width:360px}
+.social-proof.visible{opacity:1;transform:translateY(0)}
+.social-proof-inner{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(28,28,30,0.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(201,169,97,0.12);border-radius:6px;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.social-proof-avatar{width:36px;height:36px;border-radius:50%;background:rgba(201,169,97,0.15);display:flex;align-items:center;justify-content:center;color:#C9A961;font-size:13px;font-weight:500;flex-shrink:0;border:1px solid rgba(201,169,97,0.2)}
+.social-proof-text{font-size:12px;line-height:1.5;color:rgba(245,240,232,0.75)}
+.social-proof-text strong{color:#F5F0E8;font-weight:500}
+.social-proof-text .item{color:#C9A961}
+.social-proof-close{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#2C2C2E;border:1px solid rgba(201,169,97,0.15);display:flex;align-items:center;justify-content:center;color:rgba(245,240,232,0.5);font-size:10px;cursor:pointer;pointer-events:auto;transition:all 0.3s}
+.social-proof-close:hover{color:#C9A961;border-color:#C9A961}
+@media(max-width:768px){.social-proof{left:16px;right:16px;bottom:16px;max-width:none}}

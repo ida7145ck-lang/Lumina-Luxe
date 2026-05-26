@@ -11,6 +11,8 @@
 </head>
 <body>
 
+<div class="announcement-bar">&#9733; Free shipping to <span>US</span> and <span>EU</span> &#9733;</div>
+
 <nav>
   <a href="#" class="nav-logo">Lumina<span>luxe</span></a>
   <div class="nav-links">
@@ -239,5 +241,47 @@
   </div>
 </footer>
 
+<!-- Social Proof Popup -->
+<div class="social-proof" id="socialProof">
+  <div class="social-proof-inner">
+    <div class="social-proof-avatar" id="spAvatar">JM</div>
+    <div class="social-proof-text">
+      <strong id="spName">James M.</strong> from <span id="spCity">New York</span> just purchased<br />
+      <span class="item" id="spItem">The Prism Pendant</span>
+    </div>
+    <div class="social-proof-close" onclick="document.getElementById('socialProof').classList.remove('visible')">&times;</div>
+  </div>
+</div>
+
+<script>
+const socialData = [
+  { name: 'James M.', city: 'New York', item: 'The Prism Pendant', initials: 'JM' },
+  { name: 'Sophie L.', city: 'Paris', item: 'Horizon Wall Sconce', initials: 'SL' },
+  { name: 'David K.', city: 'San Francisco', item: 'Atmos Smart System', initials: 'DK' },
+  { name: 'Clara B.', city: 'Milan', item: 'Aura Chandelier', initials: 'CB' },
+  { name: 'Michael R.', city: 'London', item: 'Circadian Mapping Suite', initials: 'MR' },
+  { name: 'Anna W.', city: 'Berlin', item: 'The Prism Collection', initials: 'AW' },
+  { name: 'Thomas H.', city: 'Zurich', item: 'LuminaOS Controller', initials: 'TH' },
+  { name: 'Isabelle M.', city: 'Los Angeles', item: 'Horizon Series Duo', initials: 'IM' },
+  { name: 'Pierre D.', city: 'Lyon', item: 'Aura Statement Piece', initials: 'PD' },
+  { name: 'Elena S.', city: 'Barcelona', item: 'Full Home System', initials: 'ES' }
+];
+
+function showSocialProof() {
+  const el = document.getElementById('socialProof');
+  const data = socialData[Math.floor(Math.random() * socialData.length)];
+  document.getElementById('spName').textContent = data.name;
+  document.getElementById('spCity').textContent = data.city;
+  document.getElementById('spItem').textContent = data.item;
+  document.getElementById('spAvatar').textContent = data.initials;
+  el.classList.add('visible');
+  setTimeout(() => { el.classList.remove('visible'); }, 6000);
+}
+
+setTimeout(showSocialProof, 30000);
+setInterval(() => {
+  setTimeout(showSocialProof, Math.random() * 45000 + 30000);
+}, 60000);
+</script>
 </body>
 </html>
